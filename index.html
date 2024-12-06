@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trillers Showcase</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Trillers Showcase 😈</h1>
+        <nav class="menu">
+            <button id="menu-btn" class="dropdown-btn">☰ Menu</button>
+            <div id="menu-content" class="dropdown-content">
+                <a href="#" onclick="showSection('home')">Home</a>
+                <a href="#" onclick="showSection('trillers')">Trillers</a>
+                <a href="#" onclick="showSection('contact')">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <!-- Home Section -->
+        <section id="home" class="page-section">
+            <h2>Welcome to the Ultimate Trolling Platform!</h2>
+            <p>The most legendary trolls, all in one place. Click below to explore!</p>
+            <a href="#" onclick="showSection('trillers')" class="cta-button">Explore Trillers</a>
+        </section>
+
+        <!-- Trillers Section -->
+        <section id="trillers" class="page-section hidden">
+            <h2>Trillers</h2>
+            <div class="cards-container">
+                <div class="card">
+                    <h3>Hawk Tuah</h3>
+                    <p>Spit on your enemy and run as fast as possible!</p>
+                </div>
+                <div class="card">
+                    <h3>Tyler Strat</h3>
+                    <p>Call your friend out loud to make them embarrassed!</p>
+                </div>
+                <div class="card">
+                    <h3>Computer Shutdown</h3>
+                    <p>Sneak up and shut down their computer for a laugh!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="page-section hidden">
+            <h2>Contact Us</h2>
+            <p><strong>Rohan Mahal:</strong> <a href="mailto:23-mahal@ewellcastle.co.uk">23-mahal@ewellcastle.co.uk</a></p>
+            <p><strong>Ansh Kabra:</strong> <a href="mailto:23-kabra@ewellcastle.co.uk">23-kabra@ewellcastle.co.uk</a></p>
+            <p><strong>Matias Carosio:</strong> <a href="mailto:23-carosio@ewellcastle.co.uk">23-carosio@ewellcastle.co.uk</a></p>
+            <button onclick="showSection('home')" class="back-btn">Back to Home</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 Trillers Showcase. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // JavaScript for dynamic menu and content switching
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('.page-section');
+            sections.forEach(section => section.classList.add('hidden'));
+
+            const activeSection = document.getElementById(sectionId);
+            if (activeSection) {
+                activeSection.classList.remove('hidden');
+            }
+        }
+
+        // Toggle dropdown menu
+        const menuBtn = document.getElementById('menu-btn');
+        const menuContent = document.getElementById('menu-content');
+
+        menuBtn.addEventListener('click', () => {
+            menuContent.classList.toggle('show');
+        });
+    </script>
+</body>
+</html>
